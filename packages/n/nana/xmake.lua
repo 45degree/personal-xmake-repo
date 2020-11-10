@@ -26,7 +26,10 @@ package("nana")
             io.gsub(file_name, " and ", " && ")
         end
 
-        local configs = {"-DNANA_CMAKE_ENABLE_JPEG=OFF", "-DNANA_CMAKE_ENABLE_PNG=OFF"}
+        local configs = {"-DNANA_CMAKE_ENABLE_JPEG=OFF",
+                         "-DNANA_CMAKE_ENABLE_PNG=OFF",
+                         "-DNANA_CMAKE_INSTALL=ON"}
+
         if is_plat("linux") then
             table.insert(configs, "-DNANA_CMAKE_STD_FILESYSTEM_FORCE=ON")
         end
